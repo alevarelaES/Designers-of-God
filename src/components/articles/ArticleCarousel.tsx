@@ -131,8 +131,16 @@ export function ArticleCarousel({ t, startIndex = 3, count = 4 }: ArticleCarouse
     if (!cardWidthRef.current) return;
     pauseAuto();
     const totalWidth = cardWidthRef.current * count;
-    const amount = cardWidthRef.current * 1.5;
-    const target = dir === "left" ? x.get() + amount : x.get() - amount;
+    const currentX = x.get();
+    const cw = cardWidthRef.current;
+    
+    // Calculate the nearest exact slot (snapping position)
+    const currentSlot = Math.round(currentX / cw);
+    
+    // Scroll exactly ONE card width from the nearest slot
+    const targetSlot = dir === "left" ? currentSlot + 1 : currentSlot - 1;
+    const target = targetSlot * cw;
+    
     manualAnim.current = teleportAnimate(x, target, totalWidth, {
       duration: 0.65,
       ease: [0.22, 1, 0.36, 1],
@@ -182,24 +190,35 @@ export function ArticleCarousel({ t, startIndex = 3, count = 4 }: ArticleCarouse
     const onEnd = () => {
       const cw = cardWidthRef.current;
       if (!cw || direction !== "h") { resumeAuto(600); return; }
+      
       const totalWidth = cw * count;
-      const normCurrent = normalize(x.get(), totalWidth);
-      x.set(normCurrent);
       let velocity = 0;
+      
       if (velBuf.length >= 2) {
-        const first = velBuf[0], last = velBuf[velBuf.length - 1];
+        const first = velBuf[0];
+        const last = velBuf[velBuf.length - 1];
         const dt = last.t - first.t;
         if (dt > 0) velocity = (last.x - first.x) / dt;
       }
-      const cappedVel = Math.sign(velocity) * Math.min(Math.abs(velocity), 3);
-      const momentum  = Math.sign(cappedVel) * Math.min(Math.abs(cappedVel * 900), 2000);
-      if (Math.abs(momentum) < 25) { resumeAuto(800); return; }
-      const duration = Math.min(1.6, Math.max(0.45, Math.abs(momentum) / 1400));
-      manualAnim.current = teleportAnimate(x, normCurrent + momentum, totalWidth, {
-        duration,
-        ease: FLYWHEEL_EASE,
+
+      // Calculate nearest slot based on the dragged position
+      const currentX = x.get();
+      const currentSlot = currentX / cw;
+      
+      let targetSlot = Math.round(currentSlot);
+
+      // Snap one slot left or right if there's enough velocity
+      if (Math.abs(velocity) > 0.5) {
+        targetSlot += Math.sign(velocity);
+      }
+
+      // Animate exactly to the target slot
+      manualAnim.current = teleportAnimate(x, targetSlot * cw, totalWidth, {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1]
       });
-      resumeAuto(duration * 1000 + 500);
+      
+      resumeAuto(2000);
     };
 
     el.addEventListener("touchstart",  onStart, { passive: true });

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#000000"/>
+  <text x="256" y="276" fill="#ffffff" font-family="'Playfair Display', serif" font-size="200" font-weight="bold" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.05em">
+    D.O.G
+  </text>
+  <rect x="36" y="36" width="440" height="440" fill="none" stroke="#E84B8A" stroke-width="12" />
+</svg>

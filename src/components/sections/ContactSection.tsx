@@ -62,7 +62,7 @@ export function ContactSection({ t }: ContactSectionProps) {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE", // <-- INSERER LA CLÉ ICI
+          access_key: "0911a69f-15cb-47c2-9341-cb573d91be6e", // Clé Web3Forms insérée !
           name: form.nom,
           email: form.email,
           subject: form.sujet,
@@ -295,7 +295,6 @@ export function ContactSection({ t }: ContactSectionProps) {
               onSubmit={handleSubmit}
               aria-label={contact.formTitle}
               className="relative flex flex-col gap-0 border border-[#FFFFFF]/8 p-8 md:p-10"
-              noValidate
             >
               {/* Decorative corner accents */}
               <div className="absolute top-0 left-0 w-5 h-5 border-t border-l border-[#E84B8A]/50 pointer-events-none" />

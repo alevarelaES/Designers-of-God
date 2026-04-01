@@ -42,9 +42,11 @@ function ParallaxImages({ activeImg, loadedImages }: { activeImg: number; loaded
             key={i}
             src={img.src}
             alt={img.alt}
+            fetchPriority={i === 0 ? "high" : "auto"}
+            loading={i === 0 ? "eager" : "lazy"}
             className="absolute inset-0 w-full h-full object-cover"
             style={{
-              opacity: i === activeImg && loadedImages[i] ? 1 : 0,
+              opacity: i === activeImg ? 1 : 0,
               objectPosition: img.position,
               transition: "opacity 1200ms ease-in-out",
               willChange: "opacity",
@@ -75,9 +77,11 @@ function StaticImages({ activeImg, loadedImages }: { activeImg: number; loadedIm
             key={i}
             src={img.src}
             alt={img.alt}
+            fetchPriority={i === 0 ? "high" : "auto"}
+            loading={i === 0 ? "eager" : "lazy"}
             className="absolute inset-0 w-full h-full object-cover"
             style={{
-              opacity: i === activeImg && loadedImages[i] ? 1 : 0,
+              opacity: i === activeImg ? 1 : 0,
               objectPosition: img.position,
               transition: "opacity 1200ms ease-in-out",
               willChange: "opacity",

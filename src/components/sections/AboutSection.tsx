@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import imgAbout from "figma:asset/757a91cae21d1f1d5f80facc83e37c1e5b59199b.png";
+import imgAbout from "figma:asset/757a91cae21d1f1d5f80facc83e37c1e5b59199b.webp";
 import { Translations } from "../../i18n";
 import { useDeviceTier } from "../../hooks/useDeviceTier";
 

@@ -1,9 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── Pages d'accueil ── -->
   <url>
-    <loc>https://www.designersog.ch/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://www.designersog.ch/fr</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr"/>
   </url>
+  <url>
+    <loc>https://www.designersog.ch/en</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr"/>
+  </url>
+  <url>
+    <loc>https://www.designersog.ch/de</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr"/>
+  </url>
+
+  <!-- ── Articles FR ── -->
+  <url>
+    <loc>https://www.designersog.ch/fr/article/1</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr/article/1"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en/article/1"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de/article/1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr/article/1"/>
+  </url>
+  <url>
+    <loc>https://www.designersog.ch/fr/article/2</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr/article/2"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en/article/2"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de/article/2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr/article/2"/>
+  </url>
+  <url>
+    <loc>https://www.designersog.ch/fr/article/3</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr/article/3"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en/article/3"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de/article/3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr/article/3"/>
+  </url>
+  <url>
+    <loc>https://www.designersog.ch/fr/article/4</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr/article/4"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en/article/4"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de/article/4"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr/article/4"/>
+  </url>
+  <url>
+    <loc>https://www.designersog.ch/fr/article/5</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr/article/5"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en/article/5"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de/article/5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr/article/5"/>
+  </url>
+  <url>
+    <loc>https://www.designersog.ch/fr/article/6</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr/article/6"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en/article/6"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de/article/6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr/article/6"/>
+  </url>
+  <url>
+    <loc>https://www.designersog.ch/fr/article/7</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.designersog.ch/fr/article/7"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.designersog.ch/en/article/7"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.designersog.ch/de/article/7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.designersog.ch/fr/article/7"/>
+  </url>
+
+  <!-- ── Articles EN ── -->
+  <url><loc>https://www.designersog.ch/en/article/1</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/en/article/2</loc><lastmod>2026-02-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/en/article/3</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/en/article/4</loc><lastmod>2026-02-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/en/article/5</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/en/article/6</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/en/article/7</loc><lastmod>2026-03-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- ── Articles DE ── -->
+  <url><loc>https://www.designersog.ch/de/article/1</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/de/article/2</loc><lastmod>2026-02-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/de/article/3</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/de/article/4</loc><lastmod>2026-02-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/de/article/5</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/de/article/6</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.designersog.ch/de/article/7</loc><lastmod>2026-03-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
 </urlset>

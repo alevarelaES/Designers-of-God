@@ -3,7 +3,9 @@ import { ArrowLeft } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
-import { articleData, categoryColor, Translations } from "../i18n";
+import { articleData, categoryColor } from "../i18n";
+import { useSEO } from "../hooks/useSEO";
+import { BASE_URL, OG_IMAGE, LOGO_URL, articleHreflang, parseArticleDate } from "../data/seo";
 
 export function ArticleDetail() {
   const { id, lang = "fr" } = useParams<{ id: string; lang: string }>();
@@ -13,6 +15,39 @@ export function ArticleDetail() {
   const articleIndex = articleData.findIndex((a) => a.id === id);
   const article = articleData[articleIndex];
   const translation = t.articleList[articleIndex];
+
+  const articleTitle = translation ? `${translation.title} | D.O.G` : "D.O.G";
+  const articleDesc  = translation?.excerpt ?? "";
+  const articleUrl   = `${BASE_URL}/${lang}/article/${id ?? ""}`;
+
+  useSEO({
+    title:       articleTitle,
+    description: articleDesc,
+    lang,
+    canonical:   articleUrl,
+    ogImage:     OG_IMAGE,
+    hreflang:    id ? articleHreflang(id) : undefined,
+    jsonLD: article && translation ? {
+      "@context":        "https://schema.org",
+      "@type":           "NewsArticle",
+      "headline":        translation.title,
+      "description":     translation.excerpt,
+      "datePublished":   parseArticleDate(article.date),
+      "inLanguage":      lang,
+      "url":             articleUrl,
+      "image":           OG_IMAGE,
+      "author": {
+        "@type": "Organization",
+        "name":  "Designers of God",
+        "url":   BASE_URL,
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name":  "Designers of God",
+        "logo":  { "@type": "ImageObject", "url": LOGO_URL },
+      },
+    } : undefined,
+  });
 
   // ── Floating back button visibility ──────────────────────────────────
   const { scrollY } = useScroll();

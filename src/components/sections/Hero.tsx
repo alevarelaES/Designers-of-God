@@ -4,8 +4,8 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { Translations } from "../../i18n";
 import { buttonTap } from "../../utils/animations";
 import { useDeviceTier } from "../../hooks/useDeviceTier";
-import imgChurch from "figma:asset/7904eed1d96de1c1bd1d41a0f5fd3e3b3d0d118b.png";
-import imgSteps from "figma:asset/8b78f1adf998e3c2eff58234a82845b9dfd6f272.png";
+import imgChurch from "figma:asset/7904eed1d96de1c1bd1d41a0f5fd3e3b3d0d118b.webp";
+import imgSteps from "figma:asset/8b78f1adf998e3c2eff58234a82845b9dfd6f272.webp";
 
 const HERO_IMAGES = [
   {
@@ -22,18 +22,23 @@ const HERO_IMAGES = [
 
 const DOG_CHARS = ["D", ".", "O", ".", "G"];
 
-// ── Parallax wrapper — only mounted on high tier ──────────────────────────────
-// Isolating useScroll here means the scroll listener is never attached on
-// medium / low devices, eliminating one source of per-scroll CPU work.
-function ParallaxImages({ activeImg, loadedImages }: { activeImg: number; loadedImages: boolean[] }) {
+// ── Parallax wrapper — mounted on high + tablet-medium tiers ─────────────────
+// intensity: 100 on desktop, 50 on tablet — keeps scroll listener off phones.
+function ParallaxImages({ activeImg, loadedImages, intensity = 100 }: { activeImg: number; loadedImages: boolean[]; intensity?: number }) {
   const { scrollY } = useScroll();
-  const parallaxY  = useTransform(scrollY, [0, 600], [0, 100]);
+  const parallaxY  = useTransform(scrollY, [0, 600], [0, intensity]);
   const heroOpacity = useTransform(scrollY, [0, 320], [1, 0.25]);
+
+  // Full intensity needs overflow room for parallax movement.
+  // Lighter intensity uses inset-0 to keep the same object-cover crop as StaticImages.
+  const containerClass = intensity >= 100
+    ? "absolute -inset-x-0 -top-16 -bottom-16"
+    : "absolute inset-0";
 
   return (
     <>
       <motion.div
-        className="absolute -inset-x-0 -top-16 -bottom-16"
+        className={containerClass}
         aria-hidden="true"
         style={{ y: parallaxY, willChange: "transform" }}
       >
@@ -177,10 +182,10 @@ export function Hero({ t, onCtaClick }: HeroProps) {
         />
       </div>
 
-      {/* Background images — parallax only on high tier */}
-      {tier === "high"
-        ? <ParallaxImages activeImg={activeImg} loadedImages={loadedImages} />
-        : <StaticImages   activeImg={activeImg} loadedImages={loadedImages} />
+      {/* Background images — parallax on desktop (full) + tablet (light), static on phone */}
+      {tier === "low" || isMobile
+        ? <StaticImages activeImg={activeImg} loadedImages={loadedImages} />
+        : <ParallaxImages activeImg={activeImg} loadedImages={loadedImages} intensity={tier === "high" ? 100 : 50} />
       }
 
       {/* Side gradients */}

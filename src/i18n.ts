@@ -585,19 +585,19 @@ export const translations: Record<Language, Translations> = {
 };
 
 // ── Article metadata (images = real D.O.G brand photos) ──
-import imgTeeBack from "figma:asset/3c1769b7024c60b4d9360ef65cc5b63344077c68.png";
-import imgHoodie from "figma:asset/d975ed4fb5361da1f952203d60ccce82358fccaa.png";
-import imgPants from "figma:asset/7653d637267c63aea368a5ff73747d57ee04962a.png";
-import imgCathedralIn from "figma:asset/e074c212eb4dd31491604e56c86f5a9e8f00b21b.png";
-import imgCathedralEx from "figma:asset/6754f4e5701549a92251b66cd5428cf6b10d5a81.png";
-import imgStainedGlass from "figma:asset/870eafa488d4074a3656986d052bee639fb8916e.png";
-import imgGraphiste from "figma:asset/0a5be20abb9db07cc7fa00f16ea509b6747ed687.png";
+import imgTeeBack from "figma:asset/3c1769b7024c60b4d9360ef65cc5b63344077c68.webp";
+import imgHoodie from "figma:asset/d975ed4fb5361da1f952203d60ccce82358fccaa.webp";
+import imgPants from "figma:asset/7653d637267c63aea368a5ff73747d57ee04962a.webp";
+import imgCathedralIn from "figma:asset/e074c212eb4dd31491604e56c86f5a9e8f00b21b.webp";
+import imgCathedralEx from "figma:asset/6754f4e5701549a92251b66cd5428cf6b10d5a81.webp";
+import imgStainedGlass from "figma:asset/870eafa488d4074a3656986d052bee639fb8916e.webp";
+import imgGraphiste from "figma:asset/0a5be20abb9db07cc7fa00f16ea509b6747ed687.webp";
 // New high-res D.O.G photos
-import imgSittingHoodie from "figma:asset/e5845344bde9b95151dd93fbbc9233123a4da962.png";
-import imgChurchStanding from "figma:asset/c2e99a3b167853eabd44f7f978016f6912484e62.png";
-import imgPewSitting from "figma:asset/a4f70538075c6ad701733ee61df54a136dbc437f.png";
-import imgProfileHoodie from "figma:asset/4d2c22f17d7224b734eb0d0ba7ae4d860dca7602.png";
-import imgGroupDOG from "figma:asset/4570d0f400aaf8e8da8e05e25b3f4df1982fe3a6.png";
+import imgSittingHoodie from "figma:asset/e5845344bde9b95151dd93fbbc9233123a4da962.webp";
+import imgChurchStanding from "figma:asset/c2e99a3b167853eabd44f7f978016f6912484e62.webp";
+import imgPewSitting from "figma:asset/a4f70538075c6ad701733ee61df54a136dbc437f.webp";
+import imgProfileHoodie from "figma:asset/4d2c22f17d7224b734eb0d0ba7ae4d860dca7602.webp";
+import imgGroupDOG from "figma:asset/4570d0f400aaf8e8da8e05e25b3f4df1982fe3a6.webp";
 
 export const articleImages = {
   teeBack: imgTeeBack,

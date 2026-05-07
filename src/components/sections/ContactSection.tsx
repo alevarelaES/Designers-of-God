@@ -62,7 +62,7 @@ export function ContactSection({ t }: ContactSectionProps) {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "0911a69f-15cb-47c2-9341-cb573d91be6e", // Clé Web3Forms insérée !
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
           name: form.nom,
           email: form.email,
           subject: form.sujet,

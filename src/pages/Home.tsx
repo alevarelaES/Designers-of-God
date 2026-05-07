@@ -10,11 +10,25 @@ import { SectionDivider } from "../components/sections/SectionDivider";
 import { PartnersSection } from "../components/sections/PartnersSection";
 import { useLanguage } from "../context/LanguageContext";
 import { scrollToSection } from "../utils/scrollToSection";
+import { useSEO } from "../hooks/useSEO";
+import { HOME_SEO, BASE_URL, OG_IMAGE, homeHreflang } from "../data/seo";
+import type { Language } from "../i18n";
 
 export function Home() {
   const { t }               = useLanguage();
   const { lang = "fr" }     = useParams<{ lang: string }>();
   const { state: locState } = useLocation();
+
+  const langKey = lang.toUpperCase() as Language;
+  const seo     = HOME_SEO[langKey] ?? HOME_SEO.FR;
+  useSEO({
+    title:       seo.title,
+    description: seo.description,
+    lang,
+    canonical:   `${BASE_URL}/${lang}`,
+    ogImage:     OG_IMAGE,
+    hreflang:    homeHreflang(),
+  });
   // Capture scrollTarget at mount time — stable ref, immune to re-renders
   const scrollTargetRef     = useRef<string | null>(
     (locState as Record<string, unknown> | null)?.scrollTarget as string | null ?? null
